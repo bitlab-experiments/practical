@@ -70,9 +70,9 @@ where:
 
 Result:
 
-  - $a_{per \_ layer} = \dfrac{1 \cdot 512 \cdot 4096 \cdot 16}{8} = 33,554,432 \ bytes ≈ 33.6 MB$
+  - $a_{per \_ layer} = \dfrac{1 \cdot 512 \cdot 4096 \cdot 16}{8} = 4,194,304 \ bytes ≈ 4.2 MB$
 
-  - $a = 32 \times 33.6 \ MB ≈ 1.07 \ GB$
+  - $a = 32 \times 4.2 \ MB ≈ 134.4 \ MB$
 
 
 For a longer context (e.g. $s = 2048$):
@@ -112,11 +112,11 @@ Assume
 
 Result:
 
-$k = \dfrac{1 \cdot 512 \cdot 32 \cdot 4096 \cdot 2 \cdot 16}{8} ≈ 2,147,483,648 \ bytes ≈ 2.15 \ GB$
+$k = \dfrac{1 \cdot 512 \cdot 32 \cdot 4096 \cdot 2 \cdot 16}{8} ≈ 268,435,456 \ bytes ≈ 268.44 \ MB$
 
 For $s = 2048$:
 
-$k = \dfrac{1 \cdot 2048 \cdot 32 \cdot 4096 \cdot 2 \cdot 16}{8} ≈ 8.59 \ GB$
+$k = \dfrac{1 \cdot 2048 \cdot 32 \cdot 4096 \cdot 2 \cdot 16}{8} ≈ 1,073,741,824 \ bytes \approx 1.1 \ GB$
 
 ### 4. Memory for Overheads ($o$)
 
