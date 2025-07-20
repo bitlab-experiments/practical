@@ -1,4 +1,4 @@
-# LLM inference GPU memory requirement
+# LLM inference: GPU memory requirement
 
 ## Formula
 
