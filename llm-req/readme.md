@@ -27,7 +27,7 @@ Since each Large Language Model (LLM) has a different number of parameters and m
 Total memory required for model parameters is defined by formula:
 
 $$
-m = \dfrac{pt}{8 \ (bytes)}
+m = \dfrac{pt}{8 \ (bits)}
 $$
 
 where:
@@ -42,13 +42,13 @@ Activations are the intermediate outputs of each layer during the forward pass.
 A rough estimate for activations per layer is:
 
 $$
-a_{per \_ layer} ≈ \frac{bsht}{8 \ bytes}
+a_{per \_ layer} ≈ \frac{bsht}{8 \ bits}
 $$
 
 For the entire model (assuming activations are stored for all layers, though some frameworks reuse memory):
 
 $$
-a ≈ \frac{lbsht}{8 \ bytes}
+a ≈ \frac{lbsht}{8 \ bits}
 $$
 
 where:
@@ -88,7 +88,7 @@ The KV cache stores key and value tensors for attention mechanisms during autore
 It stores keys and values for each token, layer, and head as defined as:
 
 $$
-k ≈ \dfrac{b \cdot s \cdot l \cdot h \cdot 2 \cdot t}{8 \ bytes}
+k ≈ \dfrac{b \cdot s \cdot l \cdot h \cdot 2 \cdot t}{8 \ bits}
 $$
 
 (The factor of 2 accounts for both keys and values.)
