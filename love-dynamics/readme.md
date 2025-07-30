@@ -231,3 +231,5 @@ with values:
 - $R^{+}_{D} = 2$
 - $R^{+}_{E} = 1$
 - $R_D^- = R_E^- = -1$
+
+### 3. The effect of Parents, Friends and Family on the dynamics of Love
