@@ -52,7 +52,10 @@ $$
 The dynamics depend on the eigenvalues of the coefficient matrix:
 
 $$
-A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+A = \begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
 $$
 
 Spiral sinks/sources, nodes, saddles, or centers can all emerge, depending on:
