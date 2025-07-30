@@ -189,7 +189,7 @@ with:
 This reflects the most standard individuals, often called secure. They are those who like to be loved. An individual $i$ belonging to this class is formally characterized by an increasing function $R_i(x_j)$ that identifies the flow of interest generated in individual $i$ by the love $x_j$ of the partner.
 
 The authors do not explain why these values
-were chosen, but it is likely that $R^{+}_{1}$ and $R^{+}_{2}$ signify how lovers respond to positive love from the other. From the story, Darcy reacts more positively to Elizabeth's love compare to Elizabeth's somewhat "more chill" attitude.
+were chosen, but it is likely that $R_1^+$ and $R_2^+$ signify how lovers respond to positive love from the other. From the story, Darcy reacts more positively to Elizabeth's love compare to Elizabeth's somewhat "more chill" attitude.
 
 In the same way $R_1^-$ and $R_2^-$ represent how the characters respond when the other is disinterested.
 
@@ -209,8 +209,8 @@ So the system for Darcy and Elizabeth is:
 
 $$
 \begin{cases}
-\dot{D} = -\alpha_{D} D + \rho_{D} A_{E} + \dfrac{e^{E} - e^{-E}}{e^{E} / R^{+}_{D} - e^{-E} / R_D^-} \\
-\dot{E} = -\alpha_{E} E + \rho_{E} A_{D} + \dfrac{e^{D} - e^{-D}}{e^{D} / R^{+}_{E} - e^{-D} / R_E^-}
+\dot{D} = -\alpha_{D} D + \rho_{D} A_{E} + \dfrac{e^{E} - e^{-E}}{e^{E} / R_D^+ - e^{-E} / R_D^-} \\
+\dot{E} = -\alpha_{E} E + \rho_{E} A_{D} + \dfrac{e^{D} - e^{-D}}{e^{D} / R_E^+ - e^{-D} / R_E^-}
 \end{cases}
 $$
 
