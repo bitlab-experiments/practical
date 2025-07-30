@@ -174,24 +174,24 @@ describes the attractiveness (appeal) of individual $i$ to individual $j$. It's 
 The difference this time is in the terms $R_1(x_2)$ and $R_2(x_1)$ where they are described as:
 
 $$
-R_{1}(x_2) = \dfrac{e^{x_2} - e^{-x_2}}{e^{x_2} / R^{+}_{1} - e^{-x_2} / R^{-}_{1}}
+R_{1}(x_2) = \dfrac{e^{x_2} - e^{-x_2}}{e^{x_2} / R^{+}_{1} - e^{-x_2} / R_1^-}
 $$
 
 $$
-R_{2}(x_1) = \dfrac{e^{x_1} - e^{-x_1}}{e^{x_1} / R^{+}_{2} - e^{-x_1} / R^{-}_{2}}
+R_{2}(x_1) = \dfrac{e^{x_1} - e^{-x_1}}{e^{x_1} / R^{+}_{2} - e^{-x_1} / R_2^-}
 $$
 
 with:
 - $R^{+}_{1} = 2$
 - $R^{+}_{2} = 1$
-- $R^{-}_{1} = R^{-}_{2} = -1$
+- $R_1^- = R_2^- = -1$
 
 This reflects the most standard individuals, often called secure. They are those who like to be loved. An individual $i$ belonging to this class is formally characterized by an increasing function $R_i(x_j)$ that identifies the flow of interest generated in individual $i$ by the love $x_j$ of the partner.
 
 The authors do not explain why these values
 were chosen, but it is likely that $R^{+}_{1}$ and $R^{+}_{2}$ signify how lovers respond to positive love from the other. From the story, Darcy reacts more positively to Elizabeth's love compare to Elizabeth's somewhat "more chill" attitude.
 
-In the same way $R^{-}_{1}$ and $R^{-}_{2}$ represent how the characters respond when the other is disinterested.
+In the same way $R_1^-$ and $R_2^-$ represent how the characters respond when the other is disinterested.
 
 Finally, the coefficient $\alpha$ indicates the rate of which individuals lose memories of their partner after separating. The authors set:
 
@@ -209,8 +209,8 @@ So the system for Darcy and Elizabeth is:
 
 $$
 \begin{cases}
-\dot{D} = -\alpha_{D} D + \rho_{D} A_{E} + \dfrac{e^{E} - e^{-E}}{e^{E} / R^{+}_{D} - e^{-E} / R^{-}_{D}} \\
-\dot{E} = -\alpha_{E} E + \rho_{E} A_{D} + \dfrac{e^{D} - e^{-D}}{e^{D} / R^{+}_{E} - e^{-D} / R^{-}_{E}}
+\dot{D} = -\alpha_{D} D + \rho_{D} A_{E} + \dfrac{e^{E} - e^{-E}}{e^{E} / R^{+}_{D} - e^{-E} / R_D^-} \\
+\dot{E} = -\alpha_{E} E + \rho_{E} A_{D} + \dfrac{e^{D} - e^{-D}}{e^{D} / R^{+}_{E} - e^{-D} / R_E^-}
 \end{cases}
 $$
 
@@ -230,4 +230,4 @@ with values:
 - $\alpha_{E} = 0.3$
 - $R^{+}_{D} = 1$
 - $R^{+}_{E} = 2$
-- $R^{-}_{D} = R^{-}_{E} = -1$
+- $R_D^- = R_E^- = -1$
