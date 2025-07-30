@@ -150,4 +150,84 @@ The equations shows that:
 - The exponential terms $kSe^{-S}$ and $kSe^{-R}$ describe how the lovers react to each other. The negative exponents cause the function to have a maximum i.e. when Scarlett loves Rhett to a certain level, the love begins to have less effect on him and vice versa.
 - In this regard, we can see the terms $AR$ and $AS$ as the minimum amount of love that one will always have for the other. 
 
-### 2. Darcy and Lizzy - Pride and Prejudice
+### 2. Darcy and Elizabeth - Pride and Prejudice
+
+Again, [Rinaldi et al. (2014) in the essay: *A Mathematical Model of "Pride and Prejudice"*](https://www.researchgate.net/publication/260373742_A_Mathematical_Model_of_Pride_and_Prejudice) further extends this model to introduce "lover's memories":
+
+$$
+\begin{cases}
+\dfrac{dx_1(t)}{dt} = -\alpha_1x_1(t) + \rho_1A_2 + R_1(x_2) \\
+\dfrac{dx_2(t)}{dt} = -\alpha_2x_2(t) + \rho_2A_1 + R_2(x_1)
+\end{cases}
+$$
+
+where $\dot{x_1}$ represents Darcy's love for Elizabeth as it progresses over time and $\dot{x_2}$ represents Elizabeth's love for Darcy as it progresses over time.
+
+This is similar to the model introduced to describe Scarlett and Rhett from *"Gone with the Wind"* where:
+
+$$
+A_i = \sum_{h}\lambda^h_jA^h_i
+$$
+
+describes the attractiveness (appeal) of individual $i$ to individual $j$. It's not an absolute character of the individual, but rather a value perceived by his/her partner. As such, the appeal $A_i$ of individual $i$ varies discontinuously each time the partner $j$ discovers some relevant hidden aspect of the character of $i$.
+
+The difference this time is in the terms $R_1(x_2)$ and $R_2(x_1)$ where they are described as:
+
+$$
+R_1(x_2) = \dfrac{e^{x_2} - e^{-x_2}}{e^{x_2} / R^{+}_{1} - e^{-x_2} / R^{-}_{1}}
+$$
+
+$$
+R_2(x_1) = \dfrac{e^{x_1} - e^{-x_1}}{e^{x_1} / R^{+}_{2} - e^{-x_1} / R^{-}_{2}}
+$$
+
+with:
+- $R^{+}_{1} = 2$
+- $R^{+}_{2} = 1$
+- $R^{-}_{1} = R^{-}_{2} = -1$
+
+This reflects the most standard individuals, often called secure. They are those who like to be loved. An individual $i$ belonging to this class is formally characterized by an increasing function $R_i(x_j)$ that identifies the flow of interest generated in individual $i$ by the love $x_j$ of the partner.
+
+The authors do not explain why these values
+were chosen, but it is likely that $R^{+}_{1}$ and $R^{+}_{2}$ signify how lovers respond to positive love from the other. From the story, Darcy reacts more positively to Elizabeth's love compare to Elizabeth's somewhat "more chill" attitude.
+
+In the same way $R^{-}_{1}$ and $R^{-}_{2}$ represent how the characters respond when the other is disinterested.
+
+Finally, the coefficient $\alpha$ indicates the rate of which individuals lose memories of their partner after separating. The authors set:
+
+$$
+\alpha_{1} = 0.1
+$$
+
+$$
+\alpha_{2} = 0.3
+$$
+
+This reflects the story where Elizabeth's initial negative impression of Darcy was forgotten and later allowed her affection to increase.
+
+So the system for Darcy and Elizabeth is:
+
+$$
+\begin{cases}
+\dot{D} = -\alpha_{D} D + \rho_{D} A_E + \dfrac{e^{E} - e^{-E}}{e^{E} / R^{+}_{D} - e^{-E} / R^{-}_{D}} \\
+\dot{E} = -\alpha_{E} E + \rho_{E} A_D + \dfrac{e^{D} - e^{-D}}{e^{D} / R^{+}_{E} - e^{-D} / R^{-}_{E}}
+\end{cases}
+$$
+
+where:
+- $\alpha$: forgetting coefficient, indicating the rate of which individuals lose memories of their partner after separating.
+- $A_{E}$: Elizabeth's appeal to Darcy.
+- $A_{D}$: Darcy's appeal to Elizabeth.
+- $\rho_{D}$: sensitivity of Darcy character to the appeal of Elizabeth.
+- $\rho_{E}$: sensitivity of Elizabeth character to the appeal of Darcy.
+- $D$: Darcy's love for Elizabeth.
+- $E$: Elizabeth's love for Darcy.
+
+
+with values:
+
+- $\alpha_{D} = 0.1$
+- $\alpha_{E} = 0.3$
+- $R^{+}_{D} = 1$
+- $R^{+}_{E} = 2$
+- $R^{-}_{D} = R^{-}_{E} = -1$
