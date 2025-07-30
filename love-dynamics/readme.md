@@ -174,15 +174,15 @@ describes the attractiveness (appeal) of individual $i$ to individual $j$. It's 
 The difference this time is in the terms $R_1(x_2)$ and $R_2(x_1)$ where they are described as:
 
 $$
-R_1(x_2) = \dfrac{e^{x_2} - e^{-x_2}}{e^{x_2} / R^{+}_{1} - e^{-x_2} / R^{-}_{1}}
+R_{1}(x_2) = \dfrac{e^{x_2} - e^{-x_2}}{e^{x_2} / R^{+}_{1} - e^{-x_2} / R^{-}_{1}}
 $$
 
 $$
-R_2(x_1) = \dfrac{e^{x_1} - e^{-x_1}}{e^{x_1} / R^{+}_{2} - e^{-x_1} / R^{-}_{2}}
+R_{2}(x_1) = \dfrac{e^{x_1} - e^{-x_1}}{e^{x_1} / R^{+}_{2} - e^{-x_1} / R^{-}_{2}}
 $$
 
 with:
-- $R^{+}_{1} = 2$
+- $R^{\p}_{1} = 2$
 - $R^{+}_{2} = 1$
 - $R^{-}_{1} = R^{-}_{2} = -1$
 
@@ -209,8 +209,8 @@ So the system for Darcy and Elizabeth is:
 
 $$
 \begin{cases}
-\dot{D} = -\alpha_{D} D + \rho_{D} A_E + \dfrac{e^{E} - e^{-E}}{e^{E} / R^{+}_{D} - e^{-E} / R^{-}_{D}} \\
-\dot{E} = -\alpha_{E} E + \rho_{E} A_D + \dfrac{e^{D} - e^{-D}}{e^{D} / R^{+}_{E} - e^{-D} / R^{-}_{E}}
+\dot{D} = -\alpha_{D} D + \rho_{D} A_{E} + \dfrac{e^{E} - e^{-E}}{e^{E} / R^{+}_{D} - e^{-E} / R^{-}_{D}} \\
+\dot{E} = -\alpha_{E} E + \rho_{E} A_{D} + \dfrac{e^{D} - e^{-D}}{e^{D} / R^{+}_{E} - e^{-D} / R^{-}_{E}}
 \end{cases}
 $$
 
