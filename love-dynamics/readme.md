@@ -266,7 +266,7 @@ Authors went further and introduce the concepts of synergic and non-synergic ins
 | Type | Function |
 |---|---|
 | Non-synergic | $I_i^n = \gamma_iA_j$ |
-| Synergic | $I_i^n = (1 + S_i(x_i))\gamma_iA_j$ |
+| Synergic | $I_i^s = (1 + S_i(x_i))\gamma_iA_j$ |
 
 where:
 
