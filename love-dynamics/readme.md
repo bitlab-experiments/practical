@@ -322,4 +322,7 @@ The numerical bifurcation analysis shows that:
 
 In short, Son et al. (2011) conclude that time delays in romantic interactions can significantly influence relationship dynamics, particularly when one or both partners exhibit emotionally reactive (non-secure) behaviors. Stable, secure couples can weather delays without disruption, while reactive couples risk cyclic or chaotic emotional patterns. For insensitive couples, delays have minimal impact, but their relationships may lack emotional depth.
 
+This can be applied beyond romantic relationships to a broader range of interactions, such as those between friends, family members, employers and employees, or other relationships.
+
+
 ### 3. The effect of Parents, Friends and Family on the dynamics of Love
