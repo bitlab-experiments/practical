@@ -232,4 +232,94 @@ with values:
 - $R^{+}_{E} = 1$
 - $R_D^- = R_E^- = -1$
 
+### 3. Time delay and chaos in love dynamics
+
+[Son et al. - Time Delay Effect on the Love Dynamical Model (2011)](https://arxiv.org/abs/1108.5786) generalized Rinaldi's model, in which the derrivative of an individual's love is the sum of 3 sub-functions:
+
+- Oblivion process $O_i$,
+- Return $R_i$
+- Instinct $I_i$
+
+It's defined as:
+
+$$
+x_i(t) = O_i(x_i(t)) + R_i(x_j(t)) + I_i(x_i(t))
+$$
+
+For each term:
+
+$$
+O_i(x_i) = − \alpha_i xi
+$$
+
+Describes the Oblivion process, with $\alpha > 0$ is the forgetting coefficient.
+
+Then the return $R_i$ is the reaction of individual $i$ to the partner's love $x_j$. There are:
+- Linear return (general model - Romeo & Juliet)
+- Non-secure return (Rhett & Scarlett)
+- Secure return (Darcy & Elizabeth)
+
+Finally, the Instinct $I_i$ is related to the reaction of an individual $i$ to their partner's appeal $A_j$.
+
+Authors went further and introduce the concepts of synergic and non-synergic instincts:
+
+| Type | Function |
+|---|---|
+| Non-synergic | $I_i^n = \gamma_iA_j$ |
+| Synergic | $I_i^n = (1 + S_i(x_i))\gamma_iA_j$ |
+
+where:
+
+$$
+S_i(x_i) =
+\begin{cases}
+\sigma_i x_i^8 / (1 + x_i^8) \quad \text{for } x_i \ge 0 \\ 
+0 \qquad \qquad \qquad \ \text{for } x_i < 0
+\end{cases}
+$$
+
+This can be explained as when the synergic instinct is considered, the individual’s reaction to the partner’s appeal can be enhanced by love. For example, mothers often have a biased view of the beauty of their children. The authors also assumed that lovers are "civillized" as synergic has no effect (i.e. 0) when their love is negative.
+
+Now the authors went a step further and introduce the concept of time delay:
+
+- How does an individual know the partner’s romantic feeling? In a real situation, the romantic interaction is mediated by communication, e.g., a talk, a phone call, an email, a letter, etc. That is, time is required for the romantic feelings of someone to transfer to the other.
+
+- Also, [Ackerman et al. - Let’s Get Serious: Communicating Commitment in Romantic Relationships](https://assets.csom.umn.edu/assets/165677.pdf) showed that an individual could delay one’s confessing love to adjust potential costs and benefits.
+
+So they concluded that the oblivion, the return, and the instinct do not proceed simultaneously, and the delay time $\tau$ was added to the return function:
+
+$$
+\dot{x_i}(t) = O_i(x_i(t)) + R_i(x_j(t − \tau_j)) + I_i(x_i(t))
+$$
+
+So the original system as shown in *"Gone with the Wind"* and *"Pride and Prejudice"*:
+
+$$
+\begin{cases}
+\dot{x_1}(t) = -\alpha_1x_1(t) + \rho_1A_2 + R_1(x_2) \\
+\dot{x_2}(t) = -\alpha_2x_2(t) + \rho_2A_1 + R_2(x_1)
+\end{cases}
+$$
+
+can be updated as:
+
+$$
+\begin{cases}
+\dot{x_1}(t) = O_1(x_1(t)) + I_1(x_1(t)) + R_1(x_2(t - \tau_2))  \\
+\dot{x_2}(t) = O_2(x_2(t)) + I_2(x_2(t)) + R_2(x_1(t - \tau_1))
+\end{cases}
+$$
+
+The authors then perform [Hopf Bifurcation](https://en.wikipedia.org/wiki/Hopf_bifurcation) analysis and proved that:
+
+- If neither partner exhibits a non-secure return (i.e. both have secure or linear returns), the steady state remains stable regardless of time delays, for both synergic and non-synergic couples.
+- If at least one partner has a non-secure return, time delays can destabilize the steady state, leading to a Hopf bifurcation and cyclic love dynamics (periodic emotional oscillations).
+
+The numerical bifurcation analysis shows that:
+- The bifurcation results in chaotic motion, which exhibits stormy patterns of feelings and a long-time unpredictable state.
+- For an "insensitive couple" (likely referring to partners with low emotional responsiveness or weak mutual influence), the time delay does not affect the steady state.
+
+
+In short, Son et al. (2011) conclude that time delays in romantic interactions can significantly influence relationship dynamics, particularly when one or both partners exhibit emotionally reactive (non-secure) behaviors. Stable, secure couples can weather delays without disruption, while reactive couples risk cyclic or chaotic emotional patterns. For insensitive couples, delays have minimal impact, but their relationships may lack emotional depth.
+
 ### 3. The effect of Parents, Friends and Family on the dynamics of Love
