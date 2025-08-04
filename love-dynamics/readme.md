@@ -243,7 +243,7 @@ with values:
 It's defined as:
 
 $$
-x_i(t) = O_i(x_i(t)) + R_i(x_j(t)) + I_i(x_i(t))
+\dfrac{dx_i(t)}{dt} = O_i(x_i(t)) + R_i(x_j(t)) + I_i(x_i(t))
 $$
 
 For each term:
