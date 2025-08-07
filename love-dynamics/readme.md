@@ -325,4 +325,74 @@ In short, Son et al. (2011) conclude that time delays in romantic interactions c
 This can be applied beyond romantic relationships to a broader range of interactions, such as those between friends, family members, employers and employees, or other relationships.
 
 
-### 3. The effect of Parents, Friends and Family on the dynamics of Love
+### 4. The effect of Parents, Friends, Family and Social Networks system on the dynamics of Love (External Forces)
+
+In [Dynamical Models of Love (2004)](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=cc4ef20131cbc1d2c04ea08e3114098072f385af) J. C. Sprott discussed the limitation of the general model of Steven H. Strogatz, in which he proposed a nonlinear system:
+
+
+$$
+\begin{cases}
+\dfrac{dR}{dt} = aR + bJ(1 - \lvert J \rvert) \\
+\dfrac{dJ}{dt} = cR(1 - \lvert R \rvert) + dJ
+\end{cases}
+$$
+
+He argued that the linearity of Strogatz's system limits the allowable dynamics of love - thus may not fully captures the richness of love in reality:
+
+- The linear model assumes that the influence of one partner’s feelings on the other is constant, regardless of the intensity of those feelings.
+- This can lead to unrealistic scenarios, such as unbounded growth of love (exploding to infinity) or failure to capture complex behaviors like hesitation, saturation, or resistance to extreme emotions.
+
+The terms $aR$ and $dJ$ are the same as in Strogatz’s model, representing the self-dynamics of Romeo’s and Juliet’s feelings (e.g., decay or growth of their own emotions).
+
+Role of the nonlinear term $(1 - \lvert J \rvert)$ and $(1 - \lvert R \rvert)$:
+- When $\lvert J \rvert$ is small ( e.g. $\lvert J \rvert \approx 0$ ), $1 − \lvert J \rvert \approx 1$, so the term $bJ(1−∣J∣)\approx bJ$, resembling the linear model.
+- When $\lvert J \rvert$ is large (e.g. $\lvert J \rvert > 1$), $1 - \lvert J \rvert$ becomes small or negative, reducing or even reversing the influence of Juliet’s feelings on Romeo.
+- Example: if $\lvert J \rvert = 1$, then $1 − \lvert J \rvert = 0$ , and Juliet’s feelings have no direct effect on Romeo’s rate of change ( $bJ(1− \lvert J \rvert )=0$ ).
+- If $\lvert J \rvert > 1$, $1 − \lvert J \rvert < 0$, which could flip the sign of the influence, potentially modeling a scenario where excessive love (or dislike) pushes the other partner away.
+
+The choice of $(1 - \lvert J \rvert)$ and $(1 - \lvert R \rvert)$ is a simple way to introduce nonlinearity while keeping the model tractable. The absolute value ensures symmetry between positive and negative feelings, and the linear decay $(1 - \lvert J \rvert)$ and $(1 - \lvert R \rvert)$ creates a clear threshold at $\lvert J \rvert = 1$ and $\lvert R \rvert = 1$
+
+Based on this, [Huang et al. (2018) - Analysis of Chaotic Behavior in a Novel Extended Love Model Considering Positive and Negative External Environment](https://www.researchgate.net/publication/325148668_Analysis_of_Chaotic_Behavior_in_a_Novel_Extended_Love_Model_Considering_Positive_and_Negative_External_Environment) introduced external forces $f(t)$ and $y(t)$ to the model:
+
+$$
+\begin{cases}
+\dfrac{dR}{dt} = aR + bJ(1 - \lvert J \rvert) + y(t) \\
+\dfrac{dJ}{dt} = cR(1 - \lvert R \rvert) + dJ + f(t)
+\end{cases}
+$$
+
+where $y(t)$ and $f(t)$ are external forces applied to the Romeo and Juliet differential equations, respectively. They represent third-party advice or environmental factors, with both positive and negative effects.
+
+$f(t)$ and $y(t)$ are then described as:
+
+$$
+y(t) = f(t) = A sin(w \pi t) + B
+$$
+
+where A and B are the magnitude of advice:
+
+- If $A + B > 0 \implies$ positive advice dominates
+- If $A + B = 0 \implies$ balanced advice
+- If $A + B < 0 \implies$ negative advice dominates
+
+and $w$ is the angular frequency that represents how often the external environment affects the love of Romeo and Juliet. In the study the authors set $w = 1$ to avoid complex situations.
+
+To determine chaotic regimes, the authors used multiple techniques:
+
+- Time-series plots
+- Phase‑space portraits
+- Power spectrum
+- Poincare maps
+- Bifurcation diagrams
+- Maximal Lyapunov exponent
+
+The results show that
+
+- Balanced advice, positive excess, and negative excess all exhibited chaotic regimes under parameter variation.
+
+- Even when positive advice was stronger or weaker than negative, the system could still undergo period-doubling bifurcations into chaos.
+
+- So external opinions, even supportive ones can push a relationship into unpredictability depending on the sensitivity parameter $a$.
+
+
+In short, embedding (sinusoidal) external influences representing advice or social pressure into a love‑dynamics model can lead to rich nonlinear behaviors, including periodic oscillations and chaos, depending on the internal sensitivity parameter. Bad-intentioned and even well‑intentioned external advice can destabilize the emotional dynamics under certain conditions.
