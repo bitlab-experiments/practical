@@ -66,7 +66,7 @@ $$
 
 Since it is hard to calculate the probability of at least one pair of consecutive numbers in a result, we can calculate the probability of no pair of consecutive numbers in a result instead, and subtract it from 1 to get the result.
 
-Imagine that we have a vertical line with 49 points on it, each represents a number in our game.
+Imagine that we have a horizontal line with 49 points on it, each represents a number in our game.
 
 `1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17...49`
 
