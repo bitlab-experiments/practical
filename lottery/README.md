@@ -32,13 +32,13 @@ Intuitively, we may tend to pick spread out numbers, covering a wide range.
 e.g. 
 
 $$
-\{5, 12, 27, 35, 40, 43\}
+\lbrace 5, 12, 27, 35, 40, 43 \rbrace
 $$
 
 or:
 
 $$
-\{7, 12, 27, 35, 45, 48\}
+\lbrace 7, 12, 27, 35, 45, 48 \rbrace
 $$
 
 Those choices may feel natural, but they don’t actually improve your chance of winning.
@@ -119,7 +119,7 @@ $$
 
 ### 1.2. The probability of exactly 1 pair of consecutive numbers in a result
 
-To imagine picking up exactly 1 pair of consecutive numbers, we can think of the picks as containing one block (2 consecutive numbers), and other 5 non-consecutive numbers.
+To imagine picking up exactly 1 pair of consecutive numbers, we can think of the picks as containing one block (2 consecutive numbers), and other 4 non-consecutive numbers.
 
 `p-p-3-p-5-p-6-p-8-p-10-11-12-13-14-15-16-17...49`
 
@@ -132,7 +132,7 @@ There are 48 possible consecutive pairs i.e. 1-2, 2-3, ... 48-49. They can be sp
 For all cases, we choose a consecutive pair:
 
 $$
-pair = \{m, m + 1\}
+pair = \lbrace m, m + 1 \rbrace
 $$
 
 #### 1.2.1. Edge case
@@ -174,7 +174,7 @@ $$
 In this case, we would exclude 2 numbers immediately before and after the pair's value:
 
 $$
-exclude = \{m - 1, m + 2\}
+exclude = \lbrace m - 1, m + 2 \rbrace
 $$
 
 E.g. for pair {6, 7} we would exclude 5 and 8.
