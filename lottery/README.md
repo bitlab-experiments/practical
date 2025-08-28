@@ -320,6 +320,8 @@ $$
 p = \dfrac{c}{{49 \choose 6}} = \dfrac{5,982,636}{13,983,816} = 0.42782570937 \approx 42.78 \\%
 $$
 
+## 3.
+
 ## Conclusion
 
 Every exact 6-number combination is equally likely. However, some structural patterns (like consecutive pairs) occur quite often, even though players tend to avoid them. While this doesn’t raise your odds of winning, it may increase your expected payout by making it less likely you’ll have to share the jackpot if you do win.
