@@ -233,7 +233,7 @@ There're 10 numbers in groups 1-4, and 9 numbers in group 5.
 
 Since there're 5 groups and the draw contains 6 numbers, by the [pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle) at least one group will have at least 2 numbers in each draw.
 
-But what is the probability of 3 or more numbers in the same group ?
+But what is the probability of 3 or more numbers in the same group i.e. {12, 15, 17} or {32, 34, 37, 38} etc. ?
 
 The total combinations of 3 or more numbers in group 1-4 is:
 
