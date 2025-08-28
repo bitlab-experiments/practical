@@ -219,8 +219,107 @@ $$
 P(pairs \ge 2) = P(pairs \ge 1) - P(pairs = 1) = 49.52 \\% - 38.58 \\% = 10.94 \\%
 $$
 
-### Conclusion
+## 2. High probability of 3 or more numbers in the same group
+
+We can split the numbers 1-49 into 5 groups:
+
+1. 1-10
+2. 11-20
+3. 21-30
+4. 31-40
+5. 41-49
+
+There're 10 numbers in groups 1-4, and 9 numbers in group 5.
+
+Since there're 5 groups and the draw contains 6 numbers, by the [pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle) at least one group will have at least 2 numbers in each draw.
+
+But what is the probability of 3 or more numbers in the same group ?
+
+The total combinations of 3 or more numbers in group 1-4 is:
+
+$$
+C(10, 3) \cdot C(39, 3) + C(10, 4) \cdot C(39, 2) + C(10, 5) \cdot C(39, 1) + C(10, 6) \cdot C(39, 0)
+$$
+
+This can be generalized as:
+
+$$
+c_g = \sum^{k}_{i = 3} C(n_g, i) \cdot C(n - n_g, k - i)
+$$
+
+Equivalently:
+
+$$
+c_g = \sum^{k}_{i = 3} {n_g \choose i} {n - n_g \choose k - i}
+$$
+
+where:
+
+- $c_g$: total combinations of having at least $i$ numbers in group $g$.
+- $n_g$: total numbers in group.
+- $i$: quantity of minimum numbers in group where $i \le k$.
+- $n$: total lottery numbers.
+- $k$: total of lottery picks.
+
+And so the total number of combinations that have 3 numbers or more in a group, for all groups, in general would be:
+
+$$
+c = \sum_{j = 1}^{g} \sum_{i = 3}^{k} C(n_j, i) \cdot C(n - n_j, k - i)
+$$
+
+Equivalently:
+
+$$
+c = \sum_{j = 1}^{g} \sum_{i = 3}^{k} {n_j \choose i} {n - n_j \choose k - i}
+$$
+
+where:
+
+- $g$: number of groups.
+- $n_j$: total numbers in group j.
+
+Applying this to our 49/6 lottery with 5 groups, we'd have:
+
+$$
+c = \sum_{j = 1}^{5} \sum_{i = 3}^{6} {n_j \choose i} {49 - n_j \choose 6 - i}
+$$
+
+Since groups 1-4 are the same ($n_j = 10$, $49 - n_j = 39$), we have
+
+$$
+c_{1-4} = 4 \left( {10 \choose 3}{39 \choose 3} + {10 \choose 4}{39 \choose 2} + {10 \choose 5}{39 \choose 1} + {10 \choose 6}{39 \choose 0} \right)
+$$
+
+$$
+= 4 (1,096,680 + 155,610 + 9,828 + 210) = 5,049,312
+$$
+
+Group 5 contains 9 numbers only, so $n_j = 9$, $49 - n_j = 40$. We have:
+
+$$
+c_{5} = {9 \choose 3}{40 \choose 3} + {9 \choose 4}{40 \choose 2} + {9 \choose 5}{40 \choose 1} + {9 \choose 6}{40 \choose 0}
+$$
+
+$$
+= 829,920 + 98,280 + 5,040 + 84 = 933,324
+$$
+
+So finally:
+
+$$
+c = \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i}
+$$
+
+$$
+= c_{1-4} + c_{5} = 5,049,312 + 933,324 = 5,982,636
+$$
+
+The probability of 3 or more numbers in the same group would be:
+
+$$
+p = \dfrac{c}{{49 \choose 6}} = \dfrac{5,982,636}{13,983,816} = 0.42782570937 \approx 42.78 \\%
+$$
+
+## Conclusion
 
 Every exact 6-number combination is equally likely. However, some structural patterns (like consecutive pairs) occur quite often, even though players tend to avoid them. While this doesn’t raise your odds of winning, it may increase your expected payout by making it less likely you’ll have to share the jackpot if you do win.
-
-## 2. 
