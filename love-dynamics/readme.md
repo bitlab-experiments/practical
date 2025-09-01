@@ -13,7 +13,7 @@ $$
 $$
 
 Here, $R$ and $J$ represent Romeo and Juliet, respectively.
-- Unlike the classical play, in his version of the story (his own circumstance with his girlfriend as he [admitted](https://archive.nytimes.com/opinionator.blogs.nytimes.com/2009/05/26/guest-column-loves-me-loves-me-not-do-the-math/)), as Juliet's love increases, it accelerates Romeo's love: ($\dfrac{dR}{dt} = aJ$), but the opposite happens for Juliet ($\dfrac{dJ}{dt} = -bR$): as Romeo loves Juliet more, she pulls away from him.
+- Unlike the classical play, in his version of the story, as Juliet's love increases it accelerates Romeo's love: ($\dfrac{dR}{dt} = aJ$), but the opposite happens for Juliet ($\dfrac{dJ}{dt} = -bR$): as Romeo loves Juliet more, she pulls away from him.
 - This system can lead to oscillatory or unstable behavior, depending on the parameters.
 
 <img src="phases/RJ.png" alt="Cosmos MCP Screenshot 1" width="222">
