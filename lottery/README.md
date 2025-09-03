@@ -114,7 +114,7 @@ $$
 The probability of at least one pair of consecutive numbers shows up in a result is:
 
 $$
-P(pairs \ge 1) = 1 - \dfrac{{n - k + 1 \choose k}}{{n \choose k}} =  1 - \dfrac{{44 \choose 6}}{{49 \choose 6}} = 1 - \dfrac{7,059,052}{13,983,816} = \dfrac{6,924,764}{13,983,816} \approx 0.4951984494 = 49.52\\%
+P(pairs \ge 1) = 1 - \dfrac{{n - k + 1 \choose k}}{{n \choose k}} =  1 - \dfrac{{44 \choose 6}}{{49 \choose 6}} = 1 - \dfrac{7,059,052}{13,983,816} = \dfrac{6,924,764}{13,983,816} = 0.4951984494 \approx 49.52\\%
 $$
 
 ### 1.2. The probability of exactly 1 pair of consecutive numbers in a result
