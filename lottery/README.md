@@ -235,7 +235,9 @@ Since there're 5 groups and the draw contains 6 numbers, by the [pigeonhole prin
 
 But what is the probability of 3 or more numbers in the same group i.e. {12, 15, 17} or {32, 34, 37, 38} etc. ?
 
-The total combinations of 3 or more numbers in group 1-4 is:
+The total combinations of 3 or more numbers in a group can be calculated as a sum of all the combinations of picking the numbers from that group and picking other numbers from other groups.
+
+For example, the total combinations of picking 3 or more numbers from group 1 is:
 
 $$
 C(10, 3) \cdot C(39, 3) + C(10, 4) \cdot C(39, 2) + C(10, 5) \cdot C(39, 1) + C(10, 6) \cdot C(39, 0)
