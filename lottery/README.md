@@ -114,7 +114,15 @@ $$
 The probability of at least one pair of consecutive numbers shows up in a result is:
 
 $$
-P(pairs \ge 1) = 1 - \dfrac{{n - k + 1 \choose k}}{{n \choose k}} =  1 - \dfrac{{44 \choose 6}}{{49 \choose 6}} = 1 - \dfrac{7,059,052}{13,983,816} = \dfrac{6,924,764}{13,983,816} = 0.4951984494 \approx 49.52\\%
+\begin{equation}
+\begin{split}
+P(pairs \ge 1) &= 1 - \dfrac{{n - k + 1 \choose k}}{{n \choose k}} \\
+&=  1 - \dfrac{{44 \choose 6}}{{49 \choose 6}} \\
+&= 1 - \dfrac{7,059,052}{13,983,816} \\
+&= \dfrac{6,924,764}{13,983,816} \\
+&= 0.4951984494 \approx 49.52 \\% \nonumber
+\end{split}
+\end{equation}
 $$
 
 ### 1.2. The probability of exactly 1 pair of consecutive numbers in a result
@@ -289,31 +297,35 @@ $$
 Since groups 1-4 are the same ($n_j = 10$, $49 - n_j = 39$), we have
 
 $$
-c_{1-4} = 4 \left( {10 \choose 3}{39 \choose 3} + {10 \choose 4}{39 \choose 2} + {10 \choose 5}{39 \choose 1} + {10 \choose 6}{39 \choose 0} \right)
+\begin{equation}
+\begin{split}
+c_{1-4} &= 4 \left( {10 \choose 3}{39 \choose 3} + {10 \choose 4}{39 \choose 2} + {10 \choose 5}{39 \choose 1} + {10 \choose 6}{39 \choose 0} \right) \\
+&= 4 (1,096,680 + 155,610 + 9,828 + 210) = 5,049,312 \nonumber
+\end{split}
+\end{equation}
 $$
 
-$$
-= 4 (1,096,680 + 155,610 + 9,828 + 210) = 5,049,312
-$$
 
 Group 5 contains 9 numbers only, so $n_j = 9$, $49 - n_j = 40$. We have:
 
 $$
-c_{5} = {9 \choose 3}{40 \choose 3} + {9 \choose 4}{40 \choose 2} + {9 \choose 5}{40 \choose 1} + {9 \choose 6}{40 \choose 0}
-$$
-
-$$
-= 829,920 + 98,280 + 5,040 + 84 = 933,324
+\begin{equation}
+\begin{split}
+c_{5} &= {9 \choose 3}{40 \choose 3} + {9 \choose 4}{40 \choose 2} + {9 \choose 5}{40 \choose 1} + {9 \choose 6}{40 \choose 0} \\
+&= 829,920 + 98,280 + 5,040 + 84 = 933,324 \nonumber
+\end{split}
+\end{equation}
 $$
 
 So finally:
 
 $$
-c = \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i}
-$$
-
-$$
-= c_{1-4} + c_{5} = 5,049,312 + 933,324 = 5,982,636
+\begin{equation}
+\begin{split}
+c &= \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i} \\
+&= c_{1-4} + c_{5} = 5,049,312 + 933,324 = 5,982,636 \nonumber
+\end{split}
+\end{equation}
 $$
 
 The probability of 3 or more numbers in the same group would be:
