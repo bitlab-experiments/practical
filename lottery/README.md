@@ -334,7 +334,69 @@ $$
 p = \dfrac{c}{{49 \choose 6}} = \dfrac{5,982,636}{13,983,816} = 0.42782570937 \approx 42.78 \\%
 $$
 
-## 3.
+## 3. High probability of more odd numbers and small numbers
+
+Let's split our numbers 1-49 to 2 separate groups:
+
+1. Odd / even and
+2. Small / large
+
+- For case #1 we know that there are 25 odd numbers, and 24 even numbers in 1-49 range.
+- For case #2 let's call numbers 1-25 small, and 26-49 large so we have 25 small numbers and 24 large numbers.
+
+So for both cases, we have 2 groups:
+1. Odd (or small) numbers: 25 numbers.
+2. Even (or large) numbers: 24 numbers.
+
+Let's explore the probability of each and every distribution of numbers in these 2 groups in a draw.
+
+We know that there can be 7 scenarios:
+
+| Number | Scenario |
+|--------|----------|
+| 1      | 0-6      |
+| 2      | 1-5      |
+| 3      | 2-4      |
+| 4      | 3-3      |
+| 5      | 4-2      |
+| 6      | 5-1      |
+| 7      | 6-0      |
+
+where 0-6 means 0 numbers from group 1 (odd/small) and 6 numbers from group 2 (even/large).
+
+Each scenario come with its combination and probability:
+
+| No. | Scenario | Combinations | Combinations result | Probability | Probability result |
+|---|---|---|---|---|---|
+| 1 | 0-6 | $${25 \choose 0} \cdot {24 \choose 6}$$ | $$134,596$$ | $$\dfrac{{25 \choose 0} \cdot {24 \choose 6}}{{49 \choose 6}}$$ | $$0.00962512664 \approx 0.96\\%$$ |  |
+| 2 | 1-5 | $${25 \choose 1} \cdot {24 \choose 5}$$ | $$1,062,600$$ | $$\dfrac{{25 \choose 1} \cdot {24 \choose 5}}{{49 \choose 6}}$$ | $$0.07598784194 \approx 7.59\\%$$ |
+| 3 | 2-4 | $${25 \choose 2} \cdot {24 \choose 4}$$ | $$3,187,800$$ | $$\dfrac{{25 \choose 2} \cdot {24 \choose 4}}{{49 \choose 6}}$$ | $$0.22796352583 \approx 22.8\\%$$ |
+| 4 | 3-3 | $${25 \choose 3} \cdot {24 \choose 3}$$ | $$4,655,200$$ | $$\dfrac{{25 \choose 3} \cdot {24 \choose 3}}{{49 \choose 6}}$$ | $$0.33289911709 \approx 33.29\\%$$ |
+| 5 | 4-2 | $${25 \choose 4} \cdot {24 \choose 2}$$ | $$3,491,400$$ | $$\dfrac{{25 \choose 4} \cdot {24 \choose 2}}{{49 \choose 6}}$$ | $$0.24967433782 \approx 25\\%$$ |
+| 6 | 5-1 | $${25 \choose 5} \cdot {24 \choose 1}$$ | $$1,275,120$$ | $$\dfrac{{25 \choose 5} \cdot {24 \choose 1}}{{49 \choose 6}}$$ | $$0.09118541033 \approx 9.12\\%$$ |
+| 7 | 6-0 | $${25 \choose 6} \cdot {24 \choose 0}$$ | $$177,100$$ | $$\dfrac{{25 \choose 6} \cdot {24 \choose 0}}{{49 \choose 6}}$$ | $$0.01266464032 \approx 1.27\\%$$ |
+
+From this, we can see that the probability of a balance distribution (3-3) is 33.29%.
+And so the probability of an imbalance distribution is:
+
+$$
+1 - 0.3329 = 0.6671 \approx 66.71\\%
+$$
+
+This is a much higher chance than that of a balance one (2 times).
+
+Specifically, the probability of an imbalance distribution where there are more even numbers (or large numbers) than odd numbers (or small numbers) is:
+
+$$
+22.8 + 7.59 + 0.96 = 31.35\\%
+$$
+
+
+And the probability of an imblance distribution where there are more odd numbers (or small numbers) than even numbers (or large numbers) is:
+
+$$
+25 + 9.12 + 1.27 = 35.39\\%
+$$
 
 ## Conclusion
 
