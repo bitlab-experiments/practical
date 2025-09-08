@@ -334,7 +334,7 @@ $$
 p = \dfrac{c}{{49 \choose 6}} = \dfrac{5,982,636}{13,983,816} = 0.42782570937 \approx 42.78 \\%
 $$
 
-## 3. High probability of more odd numbers and small numbers
+## 3. High probability of 4 or more odd numbers or small numbers
 
 Let's split our numbers 1-49 to 2 separate groups:
 
