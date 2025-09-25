@@ -105,7 +105,7 @@ $$
 
 ## 3. Light String
 
-Suppose we have a light string and we wrap the it around the tree:
+Suppose we have a light string and wrap it around the tree:
 
 <img src="images/Spiral-cone-arch-s.svg.png" alt="Cosmos MCP Screenshot 1" width="257">
 
@@ -176,7 +176,7 @@ Integrating from the base ($z=0$) to height $z$:
 $$
 \begin{equation}
 \begin{split}
-\phi(z) &= \int_{0}^{z} \dfrac{d\phi}{dz} dz \\
+\phi = \phi(z) &= \int_{0}^{z} \dfrac{d\phi}{dz} dz \\
 &= \int_{0}^{z} a \ dz \\
 &= a \int_{0}^{z} dz \\
 &= a \big[ z \big]_{0}^{z} \\
@@ -281,7 +281,7 @@ $$
 \begin{equation}
 \begin{split}
 L &= \dfrac{1}{2}h\sqrt{1 + r^2(1 + \left(\dfrac{2\pi n}{h}\right)^2h^2)} + \dfrac{1 + r^2}{2\left(\dfrac{2\pi n}{h}\right)r} \sinh^{-1} \left( \dfrac{\left(\dfrac{2\pi n}{h}\right)rh}{\sqrt{1 + r^2}} \right) \\
-  &= \dfrac{h}{2}\sqrt{1 + r^2 \left(1 + \dfrac{(2\pi n)^2}{h^2} \right)h^2} + \dfrac{h(1 + r^2)}{4\pi nr} \sinh^{-1}\dfrac{2\pi nr}{\sqrt{1 + r^2}} \\
+  &= \dfrac{h}{2}\sqrt{1 + r^2 \left(1 + \dfrac{(2\pi n)^2}{h^2} h^2\right)} + \dfrac{h(1 + r^2)}{4\pi nr} \sinh^{-1}\dfrac{2\pi nr}{\sqrt{1 + r^2}} \\
   &= \dfrac{h}{2}\sqrt{1 + r^2(1 + (2\pi n)^2)} + \dfrac{h(1 + r^2)}{4\pi nr} \sinh^{-1}\dfrac{2\pi nr}{\sqrt{1 + r^2}}
 \end{split}
 \end{equation}
