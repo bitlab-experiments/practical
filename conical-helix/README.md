@@ -79,7 +79,7 @@ Suppose we want to add decoration items around the tree.
 
 We want to cover the area equally e.g. there are at least $d$ items per square meter.
 
-But note that the we don't do decoration on the area beneath the base of the tree.
+But note that we don't do decoration on the area beneath the base of the tree.
 
 So the area that we would do decoration is:
 
@@ -261,7 +261,7 @@ It's the closed form solution to the arc length's [general formula](https://en.w
 
 $$
 \begin{equation}
-L = \int_{t_1}^{t_2} \sqrt{\left(\dfrac{dx}{dz}\right)^2 + \left(\dfrac{dy}{dz}\right)^2 + \left(\dfrac{dz}{dz}\right)^2} \ dt
+L = \int_{0}^{t} \sqrt{\left(\dfrac{dx}{dz}\right)^2 + \left(\dfrac{dy}{dz}\right)^2 + \left(\dfrac{dz}{dz}\right)^2} \ dt
 \end{equation}
 $$
 
