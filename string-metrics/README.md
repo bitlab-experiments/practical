@@ -1,4 +1,4 @@
-# String Metrics
+# Fuzzy String Match
 
 ## Edit-based
 
@@ -107,7 +107,7 @@ where:
 - Emphasizes common tokens.
 
 $$
-DS(A, B) = \dfrac{|A \cap B|}{|A| + |B|}
+DS(A, B) = \dfrac{2 |A \cap B|}{|A| + |B|}
 $$
 
 where:
