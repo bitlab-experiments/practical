@@ -243,7 +243,7 @@ where:
 
 ### 3d Graph
 A graph of this conical spiral in 3d space is available at:
-[https://www.desmos.com/3d/prdhgzla5p](https://www.desmos.com/3d/prdhgzla5p)
+[https://www.desmos.com/3d/hh9lw7wgsn](https://www.desmos.com/3d/hh9lw7wgsn)
 
 <img src="images/3d-graph.png" alt="Conical Spiral" width="357">
 
