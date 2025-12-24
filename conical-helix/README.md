@@ -243,11 +243,13 @@ where:
 
 ### 3d Graph
 A graph of this conical spiral in 3d space is available at:
-[https://www.desmos.com/3d/b3rwhcv8qi](https://www.desmos.com/3d/b3rwhcv8qi)
+[https://www.desmos.com/3d/bh0zfutxml](https://www.desmos.com/3d/bh0zfutxml)
 
 <img src="images/3d-graph.png" alt="Conical Spiral" width="357">
 
 <img src="images/tree_and_string.png" alt="Conical Spiral" width="357">
+
+<img src="images/tree-and-string-complete.png" alt="Conical Spiral" width="357">
 
 ## 5. Length of Light String
 
