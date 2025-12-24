@@ -241,7 +241,11 @@ $$
 where:
 - $n$: the number of turns (wraps) of the spiral from base to top.
 
+### 3d Graph
+A graph of this conical spiral in 3d space is available at:
+[https://www.desmos.com/3d/prdhgzla5p](https://www.desmos.com/3d/prdhgzla5p)
 
+![alt text](image-1.png)
 
 ## 5. Length of Light String
 
