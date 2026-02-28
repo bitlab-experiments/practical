@@ -513,13 +513,13 @@ While the distributions are skewed, we may still ask:
 
 > *Around which value does the smallest (or largest) number typically lie?*
 
-The expected value of the smallest number is:
+The [expected value](https://en.wikipedia.org/wiki/Expected_value) of the smallest number is:
 
 $$
 E[X_{(1)}] = \sum_{i=1}^{n-k+1} i \cdot P(X_{(1)} = i)
 $$
 
-Similarly, the expected value of the largest number is:
+Similarly, the [expected value](https://en.wikipedia.org/wiki/Expected_value) of the largest number is:
 
 $$
 E[X_{(k)}] = \sum_{i=k}^{n} i \cdot P(X_{(k)} = i)
