@@ -437,8 +437,8 @@ As a result, probability mass accumulates near the lower edge for the smallest n
 ### Probability calculation
 
 Let:
-- $n$ be the maximum number (e.g., 49),
-- $k$ be the number of draws (e.g., 6).
+- $n$ be the maximum number (e.g. 49),
+- $k$ be the number of draws (e.g. 6).
 
 #### Smallest number
 
