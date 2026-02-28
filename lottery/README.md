@@ -527,19 +527,19 @@ $$
 
 For a 6-number draw from 1 to 49, these evaluate to:
 
-- **Expected smallest number:** $E[X_{(1)}] \approx 5.8$
-- **Expected largest number:** $E[X_{(k)}] \approx 44.2$
+- **Expected smallest number:** $E[X_{(1)}] \approx 7.14$
+- **Expected largest number:** $E[X_{(k)}] \approx 42.86$
 
 ### Interpretation
 
-Although the smallest number can range from 1 to 44, it most often **resides around 6**.  
-Similarly, the largest number most often **resides around 44**.
+Although the smallest number can range from 1 to 44, it most often **resides around 7**.  
+Similarly, the largest number most often **resides around 42**.
 
 These values represent the *center of mass* of the corresponding probability distributions, not the most extreme or most frequent single outcome.
 
 In practice, this explains why lottery draws typically contain:
-- a small number near 6,
-- and a large number near 44,
+- a small number near 7,
+- and a large number near 42,
 even though all combinations are equally likely.
 
 ## Conclusion
