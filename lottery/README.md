@@ -533,13 +533,13 @@ For a 6-number draw from 1 to 49, these evaluate to:
 ### Interpretation
 
 Although the smallest number can range from 1 to 44, it most often **resides around 7**.  
-Similarly, the largest number most often **resides around 42**.
+Similarly, the largest number most often **resides around 43**.
 
 These values represent the *center of mass* of the corresponding probability distributions, not the most extreme or most frequent single outcome.
 
 In practice, this explains why lottery draws typically contain:
 - a small number near 7,
-- and a large number near 42,
+- and a large number near 43,
 even though all combinations are equally likely.
 
 ## Conclusion
