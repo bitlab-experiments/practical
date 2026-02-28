@@ -398,6 +398,166 @@ $$
 25 + 9.12 + 1.27 = 35.39\\%
 $$
 
+## 4. High probability of the smallest and largest numbers residing within a range
+
+Suppose we have a lottery draw:
+
+$$
+17, 25, 08, 45, 42, 32
+$$
+
+After sorting, we obtain:
+
+$$
+08, 17, 25, 32, 42, 45
+$$
+
+The smallest and largest numbers in a draw are not uniformly distributed across the full range.
+Instead, they are constrained both **structurally** and **probabilistically**.
+
+---
+
+### Observations
+
+#### 1. Range constraints (structural limits)
+
+- In a 6-number draw from 1 to 49:
+
+  - The smallest number cannot exceed 44; otherwise, there would not be enough larger numbers remaining to fill the draw.
+  - Likewise, the largest number cannot be smaller than 6; otherwise, there would not be enough smaller numbers.
+
+These constraints define the *support* of the smallest and largest order statistics.
+
+---
+
+#### 2. Combinatorial effect (probability concentration)
+
+- If the smallest number is very small, many valid combinations exist for the remaining numbers.
+- As the smallest number increases, fewer combinations remain.
+- The same logic applies symmetrically to the largest number.
+
+As a result, probability mass accumulates near the **lower edge** for the smallest number and near the **upper edge** for the largest number.
+
+---
+
+### Probability calculation
+
+Let:
+- \( n \) be the maximum number (e.g., 49),
+- \( k \) be the number of draws (e.g., 6).
+
+#### Smallest number
+
+If the smallest number is \( i \), the remaining \( k - 1 \) numbers must be chosen from \( \{ i+1, \dots, n \} \):
+
+$$
+C = \binom{n - i}{k - 1}
+$$
+
+Thus, the probability that the smallest number equals \( i \) is:
+
+$$
+P(X_{(1)} = i) = \dfrac{\binom{n - i}{k - 1}}{\binom{n}{k}}
+$$
+
+#### Largest number
+
+If the largest number is \( i \), the remaining \( k - 1 \) numbers must be chosen from \( \{ 1, \dots, i-1 \} \):
+
+$$
+C = \binom{i - 1}{k - 1}
+$$
+
+Thus:
+
+$$
+P(X_{(k)} = i) = \dfrac{\binom{i - 1}{k - 1}}{\binom{n}{k}}
+$$
+
+---
+
+### Examples
+
+**Probability that 1 is the smallest number:**
+
+$$
+P = \dfrac{\binom{48}{5}}{\binom{49}{6}} = 0.12244897959 \approx 12.24\%
+$$
+
+**Probability that 2 is the smallest number:**
+
+$$
+P = \dfrac{\binom{47}{5}}{\binom{49}{6}} = 0.10969387755 \approx 10.96\%
+$$
+
+These probabilities decrease monotonically as \( i \) increases.
+
+---
+
+### Distribution shape
+
+- The distribution of the smallest number is **left-skewed**, with most probability mass near the lower boundary.
+- The distribution of the largest number is **right-skewed**, with most probability mass near the upper boundary.
+
+The following charts illustrate these distributions:
+
+<img src="charts/P_smallest.png" alt="Probability of smallest number" width="577">
+
+<img src="charts/P_largest.png" alt="Probability of largest number" width="577">
+
+---
+
+### Cumulative probability insight
+
+- The smallest number lies in the range **1–7** with probability **62.48%**.
+- This increases to **72.55%** for the range **1–9**.
+
+Symmetrically:
+
+- The largest number lies in the range **43–49** with probability **62.48%**.
+- This increases to **72.55%** for the range **41–49**.
+
+Thus, while extreme values are rare individually, **extreme regions dominate collectively**.
+
+---
+
+### Order statistics and expected value
+
+While the distributions are skewed, we may still ask:
+
+> *Around which value does the smallest (or largest) number typically lie?*
+
+The expected value of the smallest number is:
+
+$$
+E[X_{(1)}] = \sum_{i=1}^{n-k+1} i \cdot P(X_{(1)} = i)
+$$
+
+Similarly, the expected value of the largest number is:
+
+$$
+E[X_{(k)}] = \sum_{i=k}^{n} i \cdot P(X_{(k)} = i)
+$$
+
+For a 6-number draw from 1 to 49, these evaluate to:
+
+- **Expected smallest number:** \( E[X_{(1)}] \approx 5.8 \)
+- **Expected largest number:** \( E[X_{(k)}] \approx 44.2 \)
+
+---
+
+### Interpretation
+
+Although the smallest number can range from 1 to 44, it most often **resides around 6**.  
+Similarly, the largest number most often **resides around 44**.
+
+These values represent the *center of mass* of the corresponding probability distributions, not the most extreme or most frequent single outcome.
+
+In practice, this explains why lottery draws typically contain:
+- a small number near 6,
+- and a large number near 44,
+even though all combinations are equally likely.
+
 ## Conclusion
 
 Every exact 6-number combination is equally likely. However, some structural patterns (like consecutive pairs) occur quite often, even though players tend to avoid them. While this doesn’t raise your odds of winning, it may increase your expected payout by making it less likely you’ll have to share the jackpot if you do win.
