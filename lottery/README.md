@@ -403,13 +403,13 @@ $$
 Suppose we have a lottery draw:
 
 $$
-17, 25, 08, 45, 42, 32
+\{ 17, 25, 08, 45, 42, 32 \}
 $$
 
 After sorting, we obtain:
 
 $$
-08, 17, 25, 32, 42, 45
+\{ 08, 17, 25, 32, 42, 45 \}
 $$
 
 The smallest and largest numbers in a draw are not uniformly distributed across the full range.
@@ -421,8 +421,8 @@ Instead, they are constrained both **structurally** and **probabilistically**.
 
 - In a 6-number draw from 1 to 49:
 
-  - The smallest number cannot exceed 44; otherwise, there would not be enough larger numbers remaining to fill the draw.
-  - Likewise, the largest number cannot be smaller than 6; otherwise, there would not be enough smaller numbers.
+  - The smallest number cannot exceed 44, otherwise, there would not be enough larger numbers remaining to fill the draw.
+  - Likewise, the largest number cannot be smaller than 6, otherwise, there would not be enough smaller numbers.
 
 These constraints define the *support* of the smallest and largest order statistics.
 
@@ -437,8 +437,8 @@ As a result, probability mass accumulates near the lower edge for the smallest n
 ### Probability calculation
 
 Let:
-- $n$ be the maximum number (e.g. 49),
-- $k$ be the number of draws (e.g. 6).
+- $n$ be the maximum number (e.g. 49)
+- $k$ be the number of draws (e.g. 6)
 
 #### Smallest number
 
@@ -473,13 +473,13 @@ $$
 Probability that 1 is the smallest number:
 
 $$
-P = \dfrac{\binom{48}{5}}{\binom{49}{6}} = 0.12244897959 \approx 12.24\%
+P = \dfrac{\binom{48}{5}}{\binom{49}{6}} = 0.12244897959 \approx 12.24\\%
 $$
 
 Probability that 2 is the smallest number:
 
 $$
-P = \dfrac{\binom{47}{5}}{\binom{49}{6}} = 0.10969387755 \approx 10.96\%
+P = \dfrac{\binom{47}{5}}{\binom{49}{6}} = 0.10969387755 \approx 10.96\\%
 $$
 
 These probabilities decrease monotonically as $i$ increases.
