@@ -486,8 +486,8 @@ These probabilities decrease monotonically as $i$ increases.
 
 ### Distribution shape
 
-- The distribution of the smallest number is **left-skewed**, with most probability mass near the lower boundary.
-- The distribution of the largest number is **right-skewed**, with most probability mass near the upper boundary.
+- The distribution of the smallest number is **right-skewed**, with most probability mass near the lower boundary.
+- The distribution of the largest number is **left-skewed**, with most probability mass near the upper boundary.
 
 The following charts illustrate these distributions:
 
