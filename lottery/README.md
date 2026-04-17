@@ -315,6 +315,8 @@ where:
     - It is counted twice: once when considering group 1 and once when considering group 2.
     - Since k=6, this is the only possible overlap case, so subtracting these removes all double-counting.
 
+### Final result
+
 Applying this to our 49/6 lottery with 5 groups, we'd have:
 
 $$
@@ -380,8 +382,6 @@ $$
 \end{split}
 \end{equation}
 $$
-
-### Final result
 
 The total combinations of having 3 or more number in a group in a draw is:
 
