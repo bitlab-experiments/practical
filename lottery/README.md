@@ -358,7 +358,7 @@ So finally:
 $$
 \begin{equation}
 \begin{split}
-C &= \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i} \\
+t &= \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i} \\
   &= c_{1-4} + c_{5} = 5,049,312 + 933,324 = 5,982,636 \nonumber
 \end{split}
 \end{equation}
@@ -375,7 +375,7 @@ So:
 $$
 \begin{equation}
 \begin{split}
-\sum^{g}_{j < \ell}{n_j \choose 3}{n_\ell \choose 3}
+d &= \sum^{g}_{j < \ell}{n_j \choose 3}{n_\ell \choose 3} \\
   &= {4 \choose 2} {10 \choose 3}^2 + {4 \choose 1} {10 \choose 3} {9 \choose 3} \\
   &= 6 \cdot 14,400 + 4 \cdot 120 \cdot 84 \\
   &= 126,720
