@@ -282,6 +282,7 @@ c = t - d
 $$
 
 with:
+
 $$
 \begin{equation}
 \begin{split}
