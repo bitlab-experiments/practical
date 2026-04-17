@@ -308,9 +308,9 @@ where:
 
 - $g$: number of groups.
 - $n_j$: total numbers in group j.
-- $n_j, n_{\ell}$: total numbers in group $j$ and $\ell$ 
-- $t$: total combinations of having 3 numbers or more for all groups
-- $d$: the number of 3-3 combinations that are double-counted
+- $n_{\ell}$: total numbers in group $\ell$.
+- $t$: total combinations of having 3 numbers or more for all groups.
+- $d$: the number of 3-3 combinations that are double-counted.
     - e.g. { 1, 2, 3, 11, 12, 13 } contains 3 numbers from group 1 and 3 numbers from group 2.
     - It is counted twice: once when considering group 1 and once when considering group 2.
     - Since k=6, this is the only possible overlap case, so subtracting these removes all double-counting.
