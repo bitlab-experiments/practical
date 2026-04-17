@@ -286,10 +286,8 @@ with:
 $$
 \begin{equation}
 \begin{split}
-
 t &= \sum_{j = 1}^{g} \sum_{i = 3}^{k} C(n_j, i) \cdot C(n - n_j, k - i) \\
 d &= \sum^{g}_{j < \ell}C(n_j, 3) \cdot C(n_\ell, 3)
-
 \end{split}
 \end{equation}
 $$
@@ -322,10 +320,8 @@ Applying this to our 49/6 lottery with 5 groups, we'd have:
 $$
 \begin{equation}
 \begin{split}
-
 c &= t - d \\
   &= \sum_{j = 1}^{5} \sum_{i = 3}^{6} {n_j \choose i} {49 - n_j \choose 6 - i} - \sum^{5}_{j < \ell}{n_j \choose 3} {n_\ell \choose 3}
-
 \end{split}
 \end{equation}
 $$
@@ -377,12 +373,10 @@ So:
 $$
 \begin{equation}
 \begin{split}
-
 \sum^{g}_{j < \ell}{n_j \choose 3}{n_\ell \choose 3}
   &= {4 \choose 2} {10 \choose 3}^2 + {4 \choose 1} {10 \choose 3} {9 \choose 3} \\
   &= 6 \cdot 14,400 + 4 \cdot 120 \cdot 84 \\
   &= 126,720
-
 \end{split}
 \end{equation}
 $$
