@@ -243,6 +243,8 @@ Since there're 5 groups and the draw contains 6 numbers, by the [pigeonhole prin
 
 But what is the probability of 3 or more numbers in the same group i.e. {12, 15, 17} or {32, 34, 37, 38} etc. ?
 
+### The combinations of having 3 or more numbers in one group
+
 The total combinations of having 3 or more numbers in a group can be calculated as the sum of combinations of picking at least 3 numbers from that group and the remaining numbers from outside that group.
 
 For example, the total combinations of picking 3 or more numbers from group 1 is:
@@ -271,28 +273,63 @@ where:
 - $n$: total lottery numbers.
 - $k$: total of lottery picks.
 
+### The combinations of having 3 or more numbers in a group, for all groups
+
 And so the total number of combinations that have 3 numbers or more in a group, for all groups, in general would be:
 
 $$
-c = \sum_{j = 1}^{g} \sum_{i = 3}^{k} C(n_j, i) \cdot C(n - n_j, k - i)
+c = t - d
+$$
+
+with:
+$$
+\begin{equation}
+\begin{split}
+
+t &= \sum_{j = 1}^{g} \sum_{i = 3}^{k} C(n_j, i) \cdot C(n - n_j, k - i) \\
+d &= \sum^{g}_{j < \ell}C(n_j, 3) \cdot C(n_\ell, 3)
+
+\end{split}
+\end{equation}
+$$
+
+so: 
+
+$$
+c = \sum_{j = 1}^{g} \sum_{i = 3}^{k} C(n_j, i) \cdot C(n - n_j, k - i) - \sum^{g}_{j < \ell}C(n_j, 3) \cdot C(n_\ell, 3)
 $$
 
 Equivalently:
 
 $$
-c = \sum_{j = 1}^{g} \sum_{i = 3}^{k} {n_j \choose i} {n - n_j \choose k - i}
+c = \sum_{j = 1}^{g} \sum_{i = 3}^{k} {n_j \choose i} {n - n_j \choose k - i} - \sum^{g}_{j < \ell}{n_j \choose 3} {n_\ell \choose 3}
 $$
 
 where:
 
 - $g$: number of groups.
 - $n_j$: total numbers in group j.
+- $n_j, n_{\ell}$: total numbers in group $j$ and $\ell$ 
+- $t$: total combinations of having 3 numbers or more for all groups
+- $d$: the number of 3-3 combinations that are double-counted
+    - e.g. { 1, 2, 3, 11, 12, 13 } contains 3 numbers from group 1 and 3 numbers from group 2.
+    - It is counted twice: once when considering group 1 and once when considering group 2.
+    - Since k=6, this is the only possible overlap case, so subtracting these removes all double-counting.
 
 Applying this to our 49/6 lottery with 5 groups, we'd have:
 
 $$
-c = \sum_{j = 1}^{5} \sum_{i = 3}^{6} {n_j \choose i} {49 - n_j \choose 6 - i}
+\begin{equation}
+\begin{split}
+
+c &= t - d \\
+  &= \sum_{j = 1}^{5} \sum_{i = 3}^{6} {n_j \choose i} {49 - n_j \choose 6 - i} - \sum^{5}_{j < \ell}{n_j \choose 3} {n_\ell \choose 3}
+
+\end{split}
+\end{equation}
 $$
+
+#### First term:
 
 Since groups 1-4 are the same ($n_j = 10$, $49 - n_j = 39$), we have
 
@@ -322,8 +359,43 @@ So finally:
 $$
 \begin{equation}
 \begin{split}
-c &= \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i} \\
-&= c_{1-4} + c_{5} = 5,049,312 + 933,324 = 5,982,636 \nonumber
+C &= \sum_{j = 1}^{5} \sum^{6}_{i = 3} {n_j \choose i} {49 - n_j \choose 6 - i} \\
+  &= c_{1-4} + c_{5} = 5,049,312 + 933,324 = 5,982,636 \nonumber
+\end{split}
+\end{equation}
+$$
+
+#### Second term
+
+We have:
+- ${4 \choose 2}$ pairs of double counts for groups 1-4 and ${4 \choose 1}$ pairs of double counts for group 5
+- 10 numbers in group 1-4 and 9 numbers in group 5
+
+So:
+
+$$
+\begin{equation}
+\begin{split}
+
+\sum^{g}_{j < \ell}{n_j \choose 3}{n_\ell \choose 3}
+  &= {4 \choose 2} {10 \choose 3}^2 + {4 \choose 1} {10 \choose 3} {9 \choose 3} \\
+  &= 6 \cdot 14,400 + 4 \cdot 120 \cdot 84 \\
+  &= 126,720
+
+\end{split}
+\end{equation}
+$$
+
+### Final result
+
+The total combinations of having 3 or more number in a group in a draw is:
+
+$$
+\begin{equation}
+\begin{split}
+c &= t - d \\
+  &= 5,982,636 - 126,720 \\
+  &= 5,855,916
 \end{split}
 \end{equation}
 $$
@@ -331,7 +403,7 @@ $$
 The probability of 3 or more numbers in the same group would be:
 
 $$
-p = \dfrac{c}{{49 \choose 6}} = \dfrac{5,982,636}{13,983,816} = 0.42782570937 \approx 42.78 \\%
+p = \dfrac{c}{{49 \choose 6}} = \dfrac{5,855,916}{13,983,816} = 0.41876380524 \approx 41.87 \\%
 $$
 
 ## 3. High probability of 4 or more odd numbers or small numbers
