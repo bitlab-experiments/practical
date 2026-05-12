@@ -124,7 +124,7 @@ The market maker carries a delta of **-0.6**, meaning they lose when price rises
 To become delta neutral, a market maker must offset their position delta:
 
 $$
-\text{Hedge} = -(\text{Position Delta})
+\text{Hedge} = -\Delta
 $$
 
 Using the same example where $\Delta = 0.6$:
