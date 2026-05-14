@@ -404,7 +404,7 @@ To unify the regime framework with the relative size of derivatives vs. spot
 markets, we can define the **Effective Hedging Impact (EHI)**:
 
 $$
-\text{EHI} = \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i \times \dfrac{\text{Derivatives notional}}{\text{Market depth}} \right)
+\text{EHI} = \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i \times \dfrac{\text{Derivatives notional}}{\text{Spot market depth}} \right)
 $$
 
 where:
@@ -412,7 +412,7 @@ where:
 - $\text{Size}_i$: number of contracts for position $i$
 - $\text{Multiplier}_i$: contract multiplier (e.g. 100 shares per options contract)
 - $\text{Derivatives notional}$: total open interest $\times$ multiplier $\times$ spot price
-- $\text{Market depth}$: available order book volume near the current price 
+- $\text{Spot market depth}$: available order book volume near the current price 
   (in practice, often approximated by average daily volume when L2 data 
   is unavailable)
 
