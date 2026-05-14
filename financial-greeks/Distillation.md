@@ -156,6 +156,28 @@ $$
 
 ---
 
+## Proposal: Effective Hedging Impact (EHI)
+
+### Definition
+
+$$
+\text{EHI} = \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i 
+\times \dfrac{\text{Derivatives notional}}{\text{Market depth}} \right)
+$$
+
+EHI extends GEX by weighting hedging pressure against the market's capacity to
+absorb it - the same gamma hits harder in a thin market than a deep one.
+
+| EHI | Regime |
+|---|---|
+| Large positive | Long gamma — suppressed, mean-reverting |
+| Near zero | Transitional — near gamma flip |
+| Large negative | Short gamma — amplified, trending |
+
+> **Note:** EHI is a proposed extension, not an established metric. Market depth
+> is often approximated by average daily volume in practice.
+
+
 ## Key Insight
 
 **Delta determines direction — Gamma determines acceleration**

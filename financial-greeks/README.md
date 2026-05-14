@@ -397,3 +397,46 @@ GEX is used to:
 - Anticipate hedging-driven flows  
 
 In highly financialized markets, GEX can become a **dominant driver of short-term price dynamics**.
+
+## A simple proposal: Effective Hedging Impact (EHI)
+
+To unify the regime framework with the relative size of derivatives vs. spot 
+markets, we can define the **Effective Hedging Impact (EHI)**:
+
+$$
+\text{EHI} = \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i \times \dfrac{\text{Derivatives notional}}{\text{Market depth}} \right)
+$$
+
+where:
+- $\Gamma_i$: Black-Scholes gamma of position $i$
+- $\text{Size}_i$: number of contracts for position $i$
+- $\text{Multiplier}_i$: contract multiplier (e.g. 100 shares per options contract)
+- $\text{Derivatives notional}$: total open interest $\times$ multiplier $\times$ spot price
+- $\text{Market depth}$: available order book volume near the current price 
+  (in practice, often approximated by average daily volume when L2 data 
+  is unavailable)
+
+EHI extends GEX by scaling hedging pressure against the market's capacity to 
+absorb it. A large gamma exposure in a deep, liquid market may have negligible 
+price impact, while the same exposure in a thin market can drive significant 
+moves. By incorporating the ratio of derivatives notional to market depth, EHI 
+contextualizes GEX within the structure of the market it operates in.
+
+In practice, EHI is best interpreted as a **regime indicator** rather than a 
+precise price predictor. A large positive EHI suggests a volatility-suppressing 
+environment where hedging flows act as a shock absorber. A large negative EHI 
+suggests a volatility-amplifying environment where hedging flows chase and 
+accelerate price moves. Near zero, the market is transitioning between regimes 
+— often the most unpredictable zone.
+
+> **Note:** EHI is a proposed extension of GEX, not an established industry 
+> metric. Market depth in practice is often approximated by average daily volume 
+> when live order book data is unavailable, which reduces precision.
+
+**Interpreting EHI:**
+
+| EHI | Regime |
+|---|---|
+| Large positive | Strong long gamma — volatility suppressed, mean-reverting |
+| Small positive/negative | Transitional — near gamma flip level |
+| Large negative | Strong short gamma — volatility amplified, trending |
