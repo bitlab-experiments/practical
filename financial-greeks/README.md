@@ -404,7 +404,13 @@ To unify the regime framework with the relative size of derivatives vs. spot
 markets, we can define the **Effective Hedging Impact (EHI)**:
 
 $$
-\text{EHI} = \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i \times \dfrac{\text{Derivatives notional}}{\text{Spot market depth}} \right)
+\begin{equation}
+\begin{split}
+\text{EHI} &= \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i \times \dfrac{\text{Derivatives notional}}{\text{Spot market depth}} \right) \\
+           &= \sum_{i} \left( \Gamma_i \times \text{Size}_i \times \text{Multiplier}_i \right) \times \dfrac{\text{Derivatives notional}}{\text{Spot market depth}} \\
+           &= \text{GEX} \times \dfrac{\text{Derivatives notional}}{\text{Spot market depth}}
+\end{split}
+\end{equation}
 $$
 
 where:
