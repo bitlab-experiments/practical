@@ -1,254 +1,224 @@
 # Proxy Re-encryption Schemes (PRE)
 
 ## General Principle
-Given secrets
 
-$$
-s_1, s_2
-$$
+Given secrets $s_1, s_2$ and plaintext $M$, a ciphertext is:
 
-and plaintext:
-
-$$
-M
-$$
-
-A ciphertext is:
-
-$$
+```math
 C = M \cdot s_1
-$$
+```
 
 Decryption follows as:
 
-$$
+```math
 \begin{aligned}
 C \cdot s_1^{-1} &= M \cdot s_1 \cdot s_1^{-1} \\
                  &= M
 \end{aligned}
-$$
+```
 
 A re-encryption scheme requires:
 
-$$
+```math
 \begin{aligned}
-\text{rk} &= s_2 \cdot s_1^{-1} \\
-\text{PRE}(C)    &= C_2 = C \cdot rk
+rk &= s_2 \cdot s_1^{-1} \\
+\mathrm{PRE}(C) &= C_2 = C \cdot rk
 \end{aligned}
-$$
+```
 
 So that:
 
-$$
+```math
 \begin{aligned}
 C_2 \cdot s_2^{-1} &= M \cdot s_1 \cdot s_2 \cdot s_1^{-1} \cdot s_2^{-1} \\
-                   &= M \cdot \dfrac{s_1}{s_1} \cdot \dfrac{s_2}{s_2} \\
+                   &= M \cdot \frac{s_1}{s_1} \cdot \frac{s_2}{s_2} \\
                    &= M
 \end{aligned}
-$$
+```
 
-What makes it proxy is $PRE(C)$ is computed by a semi-trusted proxy that holds only $rk$. It can convert ciphertexts from secret key $s_1$ to secret key $s_2$, but cannot decrypt either one.
+What makes it a proxy scheme is that $\mathrm{PRE}(C)$ is computed by a semi-trusted proxy that holds only $rk$. It can convert ciphertexts from secret key $s_1$ to secret key $s_2$, but cannot decrypt either one.
 
 ## BBS98
-Let $\mathbb{G}$ be a cyclic group of prime order $q$, with generator $g$.
 
-All scalar arithmetic is performed modulo $q$.
+Let $\mathbb{G}$ be a cyclic group of prime order $q$, with generator $g$. All scalar arithmetic is performed modulo $q$.
 
-Here Charlie with keys (c, C) sends a message to Alice (a, A). Alice wants Bob (b, B) to be able to decrypt this message so she performs proxy re-encryption through Dave (proxy).
+Charlie with keys $(c, C)$ sends a message to Alice $(a, A)$. Alice wants Bob $(b, B)$ to be able to decrypt this message, so she performs proxy re-encryption through Dave (the proxy).
 
-- Private keys:
+**Private keys:**
 
-$$
+```math
 \begin{aligned}
-a \xleftarrow{\$}\mathbb{Z}_q^* \\
-b \xleftarrow{\$}\mathbb{Z}_q^* \\
-c \xleftarrow{\$}\mathbb{Z}_q^*
+a &\in_R \mathbb{Z}_q^* \\
+b &\in_R \mathbb{Z}_q^* \\
+c &\in_R \mathbb{Z}_q^*
 \end{aligned}
-$$
+```
 
-- Public keys:
+**Public keys:**
 
-$$
+```math
 \begin{aligned}
 A &= g^a \\
 B &= g^b \\
 C &= g^c
 \end{aligned}
-$$
+```
 
-- Encryption:
+**Encryption:**
 
-$$
+```math
 \begin{aligned}
 u   &= A^c = g^{ac} \\
 v   &= m \cdot g^c \\
 C_A &= (u, v)
 \end{aligned}
-$$
+```
 
-- Decryption:
+**Decryption:**
 
-$$
+```math
 \begin{aligned}
 u' &= u^{a^{-1}} \\
-   &= (g^{ac})^{a^{-1}} = g^{ac \frac{1}{a}} = g^c \\
+   &= (g^{ac})^{a^{-1}} = g^{ac \cdot \frac{1}{a}} = g^c \\
 v \cdot u'^{-1} &= m \cdot g^{c} \cdot (g^{c})^{-1} \\
-                &= m\dfrac{g^c}{g^c} \\
                 &= m
 \end{aligned}
-$$
+```
 
-- Calculate re-encryption key $rk$:
+**Re-encryption key:**
 
-$$
+```math
+rk_{A \to B} = b \cdot a^{-1}
+```
+
+> **Important:** This expression requires both private keys $a$ and $b$, or an equivalent interactive protocol that obtains the required value.
+
+**Re-encryption (done by the proxy):**
+
+```math
 \begin{aligned}
-rk_{A \rightarrow B} &= ba^{-1}
+u_{\mathrm{pre}} &= u^{rk_{A \to B}} \\
+                 &= (g^{ac})^{b a^{-1}} = g^{ac \cdot \frac{b}{a}} \\
+                 &= g^{bc} \\
+v_{\mathrm{pre}} &= v \\
+C_B &= (u_{\mathrm{pre}}, v_{\mathrm{pre}})
 \end{aligned}
-$$
+```
 
-  - **Important:** This expression requires both private keys $a$ and $b$, or an equivalent interactive protocol that obtains the required value.
+**Decryption (Bob):**
 
-- Re-encryption (a proxy should do this):
-
-$$
+```math
 \begin{aligned}
-u_{pre} &= u^{rk_{A \rightarrow B}} \\
-    &= (g^{ac})^{ba^{-1}} = g^{ac \frac{b}{a}} \\
-    &= g^{bc} \\
-v_{pre} &= v \\
-C_B &= (u_{pre}, v_{pre})
-\end{aligned}
-$$
-
-- Decryption:
-
-$$
-\begin{aligned}
-u' &= u_{pre}^{b^{-1}} \\
-   &= (g^{bc})^{b^{-1}} = g^{bc \frac{1}{b}} \\
+u' &= u_{\mathrm{pre}}^{b^{-1}} \\
+   &= (g^{bc})^{b^{-1}} = g^{bc \cdot \frac{1}{b}} \\
    &= g^c \\
-v_{pre} \cdot u'^{-1} &= m \cdot g^c \cdot (g^c)^{-1} \\
-                      &= m
+v_{\mathrm{pre}} \cdot u'^{-1} &= m \cdot g^c \cdot (g^c)^{-1} \\
+                               &= m
 \end{aligned}
-$$
+```
 
 ## Improvement for BBS98 (Hashed DH)
 
-Original BBS98 scheme requires the re-encryption key calculation to use both private keys $a$ and $b$.
+The original BBS98 scheme requires the re-encryption key calculation to use both private keys $a$ and $b$.
 
-- Keys:
+Keys are the same as above, and encryption and Alice's decryption stay the same.
 
-$$
+**Re-encryption key:**
+
+```math
 \begin{aligned}
-a \xleftarrow{\$} \mathbb{Z}_q^*,
-\qquad A=g^a \\
-b \xleftarrow{\$} \mathbb{Z}_q^*,
-\qquad B=g^b \\
-c \xleftarrow{\$} \mathbb{Z}_q^*,
-\qquad C=g^c
+d_A &= \mathrm{Hash}(B^a) \\
+rk_{A \to B} &= a^{-1} \cdot d_A^{-1}
 \end{aligned}
-$$
+```
 
-- Encryption and decryption stay the same.
+**Re-encryption:**
 
-- Calculate re-encryption key $rk$:
-
-$$
+```math
 \begin{aligned}
-d_A &= \text{Hash}(B^a) \\
-rk_{A \rightarrow B} &= a^{-1} \cdot d_A^{-1}
+u_{\mathrm{pre}} &= u^{rk_{A \to B}} \\
+                 &= (g^{ac})^{a^{-1} \cdot d_A^{-1}} = g^{c \cdot d_A^{-1}} \\
+v_{\mathrm{pre}} &= v \\
+C_B &= (u_{\mathrm{pre}}, v_{\mathrm{pre}})
 \end{aligned}
-$$
+```
 
-- Re-encryption:
+**Decryption (Bob):**
 
-$$
+```math
 \begin{aligned}
-u_\text{pre} &= u^{rk_{A \rightarrow B}} \\
-             &= (g^{ac})^{a^{-1} \cdot d_A^{-1}} = g^{cd_A^{-1}} \\
-v_{\text{pre}} &= v \\
-C_B            &= (u_{\text{pre}}, v_{\text{pre}})
-\end{aligned}
-$$
-
-- Decryption:
-
-$$
-\begin{aligned}
-d_B &= \text{Hash}(A^b) \\
-u'  &= u_{\text{pre}}^{d_B} \\
-    &= (g^{cd_A^{-1}})^{d_B} \\
+d_B &= \mathrm{Hash}(A^b) \\
+u'  &= u_{\mathrm{pre}}^{d_B} \\
+    &= (g^{c \cdot d_A^{-1}})^{d_B} \\
     &= g^{c} \\
-v_{pre} \cdot u'^{-1} &= m \cdot g^c \cdot (g^c)^{-1} \\
-                      &= m
+v_{\mathrm{pre}} \cdot u'^{-1} &= m \cdot g^c \cdot (g^c)^{-1} \\
+                               &= m
 \end{aligned}
-$$
+```
 
+This works because $d_B = \mathrm{Hash}(A^b) = \mathrm{Hash}(g^{ab}) = \mathrm{Hash}(B^a) = d_A$.
 
-## Elliptic curve PRE
+## Elliptic Curve PRE
 
-In BBS98, computing $rk=b/a$ requires both private keys (or an interactive protocol). Here, Alice computes $rk$ from her own secret $a$ and Bob’s public key $B$, so no one else’s secret is needed.
+In BBS98, computing $rk = b/a$ requires both private keys (or an interactive protocol). Here, Alice computes $rk$ from her own secret $a$ and Bob's public key $B$, so no one else's secret is needed.
 
 Let $E/\mathbb{F}_p$ be an elliptic curve with a subgroup of prime order $q$, generated by $G$. Scalar arithmetic is performed modulo $q$.
 
-- Keys:
+**Keys:**
 
-$$
+```math
 \begin{aligned}
-a \xleftarrow{\$} \mathbb{Z}_q^*,
-\qquad A=aG \\
-b \xleftarrow{\$} \mathbb{Z}_q^*,
-\qquad B=bG \\
-c \xleftarrow{\$} \mathbb{Z}_q^*,
-\qquad C=cG
+a &\in_R \mathbb{Z}_q^*, \quad A = a \cdot G \\
+b &\in_R \mathbb{Z}_q^*, \quad B = b \cdot G \\
+c &\in_R \mathbb{Z}_q^*, \quad C = c \cdot G
 \end{aligned}
-$$
+```
 
-- Encryption:
+**Encryption (Charlie sends $(C, ct)$):**
 
-$$
+```math
 \begin{aligned}
 X_C &= c \cdot A = ca \cdot G \\
-K &= \text{KDF}(X_C) \\
-ct &= \text{AEAD\_Enc}(K, M)
+K   &= \mathrm{KDF}(X_C) \\
+ct  &= \mathrm{AEADEnc}(K, M)
 \end{aligned}
-$$
+```
 
-- Decryption:
+**Decryption (Alice):**
 
-$$
+```math
 \begin{aligned}
 X_A &= a \cdot C = ca \cdot G = X_C \\
-K   &= \text{KDF}(X_A) \\
-M   &= \text{AEAD\_Dec}(X_A, M) 
+K   &= \mathrm{KDF}(X_A) \\
+M   &= \mathrm{AEADDec}(K, ct)
 \end{aligned}
-$$
+```
 
-- Calculate re-encryption key $rk$:
+**Re-encryption key:**
 
-$$
+```math
 \begin{aligned}
-h_{AB} &= \text{Hash}(a \cdot B) \\
-rk     &= a \cdot h_{AB}^{-1} = \dfrac{a}{\text{Hash}(a \cdot B)}
+h_{AB} &= \mathrm{Hash}(a \cdot B) \\
+rk     &= a \cdot h_{AB}^{-1} = \frac{a}{\mathrm{Hash}(a \cdot B)}
 \end{aligned}
-$$
+```
 
-- Re-encryption by proxy:
+**Re-encryption (proxy), forwarding $(C', ct)$:**
 
-$$
-\begin{aligned}
+```math
 C' = rk \cdot C
-\end{aligned}
-$$
+```
 
-- Decryption:
+**Decryption (Bob):**
 
-$$
+```math
 \begin{aligned}
-X_B &= \text{Hash}(b \cdot A) \cdot C' \\
+X_B &= \mathrm{Hash}(b \cdot A) \cdot C' \\
     &= h_{AB} \cdot a \cdot h_{AB}^{-1} \cdot C \\
     &= a \cdot C = X_A = X_C \\
-K   &= \text{KDF}(X_B) \\
-M   &= \text{AEAD\_Dec}(K, ct)
+K   &= \mathrm{KDF}(X_B) \\
+M   &= \mathrm{AEADDec}(K, ct)
 \end{aligned}
-$$
+```
+
+This works because $b \cdot A = ba \cdot G = a \cdot B$, so $\mathrm{Hash}(b \cdot A) = h_{AB}$.
