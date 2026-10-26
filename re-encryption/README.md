@@ -100,13 +100,13 @@ $$
 
 - Calculate re-encryption key $rk$:
 
-  $$
-  \begin{aligned}
-  rk_{A \rightarrow B} &= ba^{-1}
-  \end{aligned}
-  $$
+$$
+\begin{aligned}
+rk_{A \rightarrow B} &= ba^{-1}
+\end{aligned}
+$$
 
-    - **Important:** This expression requires both private keys $a$ and $b$, or an equivalent interactive protocol that obtains the required value.
+  - **Important:** This expression requires both private keys $a$ and $b$, or an equivalent interactive protocol that obtains the required value.
 
 - Re-encryption (a proxy should do this):
 
