@@ -174,7 +174,7 @@ c &\in_R \mathbb{Z}_q^*, \quad C = c \cdot G
 \end{aligned}
 ```
 
-**Encryption (Charlie sends $(C, ct)$):**
+**Encryption - Charlie sends $(C, ct)$:**
 
 ```math
 \begin{aligned}
