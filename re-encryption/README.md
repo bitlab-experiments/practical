@@ -38,7 +38,7 @@ C_2 \cdot s_2^{-1} &= M \cdot s_1 \cdot s_2 \cdot s_1^{-1} \cdot s_2^{-1} \\
 
 What makes it a proxy scheme is that $\mathrm{PRE}(C)$ is computed by a semi-trusted proxy that holds only $rk$. It can convert ciphertexts from secret key $s_1$ to secret key $s_2$, but cannot decrypt either one.
 
-## BBS98
+## [BBS98](https://www.researchgate.net/publication/221348480_Divertible_protocols_and_atomic_proxy_cryptography)
 
 Let $\mathbb{G}$ be a cyclic group of prime order $q$, with generator $g$. All scalar arithmetic is performed modulo $q$.
 
